@@ -14,7 +14,8 @@ class ChartVisitorsCell: UICollectionViewCell {
         chart.translatesAutoresizingMaskIntoConstraints = false
         chart.backgroundColor = .clear
         chart.isUserInteractionEnabled = true
-        chart.doubleTapToZoomEnabled = true // Включаем зум
+        chart.doubleTapToZoomEnabled = true
+        chart.pinchZoomEnabled = true
         return chart
     }()
 
@@ -50,7 +51,6 @@ class ChartVisitorsCell: UICollectionViewCell {
     }
 
     private func updateChart(with statistics: [Statistics]) {
-        // Собираем все даты из массива и их подсчет
         var dateCounts: [Date: Int] = [:]
         let calendar = Calendar.current
         let dateFormatter = DateFormatter()
@@ -59,19 +59,25 @@ class ChartVisitorsCell: UICollectionViewCell {
         var allDates: [Date] = []
         for stat in statistics {
             for dateNumber in stat.dates {
-                let dateString = String(dateNumber)
-                let month = Int(dateString.prefix(2)) ?? 1
-                let day = Int(dateString.dropFirst(2).prefix(2)) ?? 1
+                let dateString = String(format: "%08d", dateNumber)
+                let day = Int(dateString.prefix(2)) ?? 1
+                let month = Int(dateString.dropFirst(2).prefix(2)) ?? 1
                 let year = Int(dateString.suffix(4)) ?? 2024
+                if month > 12 || month < 1 || day > 31 || day < 1 {
+                    continue
+                }
                 if let date = calendar.date(from: DateComponents(year: year, month: month, day: day)) {
                     allDates.append(date)
                     dateCounts[date, default: 0] += 1
+                } else {
+                    print("Failed to create date from: day \(day), month \(month), year \(year)")
                 }
             }
         }
 
         // Уникализируем даты и сортируем по возрастанию
-        let uniqueDates = Array(Set(allDates)).sorted { $0 < $1 } // Сортировка по возрастанию
+        let uniqueDates = Array(Set(allDates)).sorted { $0 < $1 }
+
         let dateStrings = uniqueDates.map { dateFormatter.string(from: $0) }
 
         // Создаем данные для графика
@@ -104,8 +110,8 @@ class ChartVisitorsCell: UICollectionViewCell {
         chartView.xAxis.labelTextColor = .gray
         chartView.xAxis.labelFont = .systemFont(ofSize: 12)
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dateStrings)
-        chartView.xAxis.granularity = 1.0 // Устанавливаем шаг в 1, чтобы избежать дублирования
-        chartView.xAxis.labelCount = dateStrings.count // Ограничиваем количество меток
+        chartView.xAxis.granularity = 1.0
+        chartView.xAxis.labelCount = dateStrings.count
 
         // Настройка левой оси для горизонтальных линий
         chartView.leftAxis.enabled = true
