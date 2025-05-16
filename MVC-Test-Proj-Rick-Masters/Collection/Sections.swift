@@ -11,6 +11,51 @@ enum Sections {
     case usersView([UsersView])
     case dateIntervals([DateInterval])
     case genderIntervals([DateInterval])
+    case usersSub([UsersSubs])
+    case frequentVisitors([FrequentVisitors])
+}
+
+struct FrequentVisitors {
+    let visitors: [Visitor]
+}
+
+struct Visitor {
+    let userName: String
+    let id: Int
+    let sex: Sex
+    let age: Int
+    let isOnline: Bool
+    let files: [File]
+
+    enum Sex: String {
+        case M = "M"
+        case F = "F"
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case userName = "username"
+        case id
+        case sex
+        case age
+        case isOnline
+        case files
+    }
+}
+
+struct File {
+    let id: Int
+    let url: String
+    let type: TypeFile
+
+    enum TypeFile: String {
+        case avatar = "avatar"
+    }
+}
+
+
+struct UsersSubs {
+    let usersSub: UsersView
+    let usersUn: UsersView
 }
 
 

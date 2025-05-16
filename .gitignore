@@ -33,3 +33,8 @@ Packages/
 # === Playgrounds ===
 timeline.xctimeline
 playground.xcworkspace
+
+# User-specific files
+xcuserdata/
+*.xcuserstate
+*.xcbkptlist

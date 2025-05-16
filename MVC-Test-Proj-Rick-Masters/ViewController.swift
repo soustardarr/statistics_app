@@ -35,12 +35,88 @@ class ViewController: UIViewController {
                 .init(isSelected: true, typeView: .onWeek),
                 .init(isSelected: false, typeView: .onMonth)
             ]),
+
+            .frequentVisitors(
+                [
+                    FrequentVisitors(
+                        visitors: [
+                            Visitor(
+                                userName: "GGGGG",
+                                id: 1,
+                                sex: .M,
+                                age: 12,
+                                isOnline: true,
+                                files: [
+                                    File(
+                                        id: 1,
+                                        url: "https://img.freepik.com/free-photo/front-view-of-man-with-headphones-in-the-city_23-2148573065.jpg",
+                                        type: .avatar
+                                    )
+                                ]
+                            ),
+                            Visitor(
+                                userName: "GGdasdasd",
+                                id: 2,
+                                sex: .F,
+                                age: 12,
+                                isOnline: true,
+                                files: [
+                                    File(
+                                        id: 2,
+                                        url: "https://img.freepik.com/premium-photo/young-woman-smiles-while-walking-in-a-city-street-during-the-day_906809-27175.jpg",
+                                        type: .avatar
+                                    )
+                                ]
+                            ),
+                            Visitor(
+                                userName: "qpqpqppq",
+                                id: 3,
+                                sex: .M,
+                                age: 12,
+                                isOnline: false,
+                                files: [
+                                    File(
+                                        id: 3,
+                                        url: "https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg",
+                                        type: .avatar
+                                    )
+                                ]
+                            ),
+                            Visitor(
+                                userName: "qpqpqppq",
+                                id: 3,
+                                sex: .M,
+                                age: 12,
+                                isOnline: false,
+                                files: [
+                                    File(
+                                        id: 3,
+                                        url: "https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg",
+                                        type: .avatar
+                                    )
+                                ]
+                            ),
+                        ]
+                    )
+                ]
+            ),
+
             .genderIntervals([
                 .init(isSelected: true, typeView: .day),
                 .init(isSelected: false, typeView: .week),
                 .init(isSelected: false, typeView: .month),
                 .init(isSelected: false, typeView: .allTime),
-            ])
+            ]),
+            .usersSub([
+                .init(
+                    usersSub: UsersView(
+                        count: 10, type: .subscription
+                    ),
+                    usersUn: UsersView(
+                        count: 21, type: .unsubscription
+                    )
+                )
+            ]),
         ]
 
     }

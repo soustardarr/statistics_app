@@ -43,6 +43,8 @@ class CollectionView: UICollectionView {
                  withReuseIdentifier: HeaderCollectionCell.reuseIdentifier)
         register(ViewUsersCell.self, forCellWithReuseIdentifier: ViewUsersCell.reuseIdentifier)
         register(IntervalCell.self, forCellWithReuseIdentifier: IntervalCell.reuseIdentifier)
+        register(SubUsersCell.self, forCellWithReuseIdentifier: SubUsersCell.reuseIdentifier)
+        register(FrequentVisitorsCell.self, forCellWithReuseIdentifier: FrequentVisitorsCell.reuseIdentifier)
     }
 
     private func createLayoutSection(
@@ -88,6 +90,11 @@ class CollectionView: UICollectionView {
 
             case .genderIntervals:
                 return self.gendersIntervalsLayoutSection()
+
+            case .usersSub:
+                return self.usersSubLayoutSection()
+            case .frequentVisitors:
+                return self.frequentVisitorsLayoutSection()
             }
         }
     }
@@ -109,6 +116,43 @@ class CollectionView: UICollectionView {
         )
         return section
     }
+
+    private func usersSubLayoutSection() -> NSCollectionLayoutSection {
+        let itemSize = calculateLayoutSize(width: .fractionalWidth(1), height: .absolute(200))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+
+        let groupSize = calculateLayoutSize(width: .fractionalWidth(1), height: .estimated(200))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        let section = createLayoutSection(
+            group: group,
+            behaviour: .none,
+            interGroupSpacing: 0,
+            hasHeader: true,
+            contentInsets: .init(top: 12, leading: 16, bottom: 0, trailing: 16)
+        )
+        return section
+    }
+
+    private func frequentVisitorsLayoutSection() -> NSCollectionLayoutSection {
+        let itemSize = calculateLayoutSize(width: .fractionalWidth(1), height: .estimated(186))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+
+        let groupSize = calculateLayoutSize(width: .fractionalWidth(1), height: .estimated(186))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+        let section = createLayoutSection(
+            group: group,
+            behaviour: .none,
+            interGroupSpacing: 0,
+            hasHeader: true,
+            contentInsets: .init(top: 12, leading: 16, bottom: 0, trailing: 16)
+        )
+        return section
+    }
+
 
     private func intervalsLayoutSection() -> NSCollectionLayoutSection {
         let itemSize = calculateLayoutSize(width: .estimated(120), height: .absolute(32))
@@ -156,6 +200,10 @@ extension CollectionView: UICollectionViewDataSource {
             return data.count
         case .genderIntervals(let data):
             return data.count
+        case .usersSub(let data):
+            return data.count
+        case .frequentVisitors(let data):
+            return data.count
         }
     }
 
@@ -174,6 +222,16 @@ extension CollectionView: UICollectionViewDataSource {
             let cell: IntervalCell = self.dequeueReusableCell(withReuseIdentifier: IntervalCell.reuseIdentifier, for: indexPath)  as! IntervalCell
             cell.data = data[indexPath.row]
             return cell
+
+        case .usersSub(let data):
+            let cell: SubUsersCell = self.dequeueReusableCell(withReuseIdentifier: SubUsersCell.reuseIdentifier, for: indexPath)  as! SubUsersCell
+            cell.data = data[indexPath.row]
+            return cell
+
+        case .frequentVisitors(let data):
+            let cell: FrequentVisitorsCell = self.dequeueReusableCell(withReuseIdentifier: FrequentVisitorsCell.reuseIdentifier, for: indexPath)  as! FrequentVisitorsCell
+            cell.data = data[indexPath.row]
+            return cell
         }
     }
 }
@@ -188,6 +246,9 @@ extension CollectionView: UICollectionViewDelegate {
 //            
 //        }
 //    }
+
+
+
 
     
 }
@@ -213,8 +274,12 @@ extension CollectionView: UICollectionViewDelegateFlowLayout {
             header.title = "Посетители"
         case .dateIntervals:
             break
+        case .usersSub:
+            header.title = "Наблюдатели"
         case .genderIntervals:
             header.title = "Пол и возраст"
+        case .frequentVisitors:
+            header.title = "Чаще всех посещают Ваш профиль"
         }
 
         return header
