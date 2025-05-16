@@ -13,6 +13,7 @@ enum Sections {
     case genderIntervals([DateInterval])
     case usersSub([UsersSubs])
     case frequentVisitors([FrequentVisitors])
+    case chartVisitorsCell([ArrayStatistics])
 }
 
 struct FrequentVisitors {
@@ -82,5 +83,21 @@ struct DateInterval {
         case week = "Неделя"
         case month = "Месяц"
         case allTime = "Все время"
+    }
+}
+
+struct ArrayStatistics {
+    let statistics: [Statistics]
+}
+
+struct Statistics: Codable {
+    let user_id: Int
+    let type: StatisticsType
+    let dates: [Int]
+
+    enum StatisticsType: String, Codable {
+        case view = "view"
+        case subscription = "subscription"
+        case unsubscription = "unsubscription"
     }
 }

@@ -45,6 +45,7 @@ class CollectionView: UICollectionView {
         register(IntervalCell.self, forCellWithReuseIdentifier: IntervalCell.reuseIdentifier)
         register(SubUsersCell.self, forCellWithReuseIdentifier: SubUsersCell.reuseIdentifier)
         register(FrequentVisitorsCell.self, forCellWithReuseIdentifier: FrequentVisitorsCell.reuseIdentifier)
+        register(ChartVisitorsCell.self, forCellWithReuseIdentifier: ChartVisitorsCell.reuseIdentifier)
     }
 
     private func createLayoutSection(
@@ -95,8 +96,28 @@ class CollectionView: UICollectionView {
                 return self.usersSubLayoutSection()
             case .frequentVisitors:
                 return self.frequentVisitorsLayoutSection()
+            case .chartVisitorsCell:
+                return self.statisticsLayoutSection()
             }
         }
+    }
+
+    private func statisticsLayoutSection() -> NSCollectionLayoutSection {
+        let itemSize = calculateLayoutSize(width: .fractionalWidth(1), height: .estimated(208))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+
+        let groupSize = calculateLayoutSize(width: .fractionalWidth(1), height: .estimated(208))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+        let section = createLayoutSection(
+            group: group,
+            behaviour: .none,
+            interGroupSpacing: 0,
+            hasHeader: false,
+            contentInsets: .init(top: 0, leading: 16, bottom: 0, trailing: 16)
+        )
+        return section
     }
 
     private func usersViewLayoutSection() -> NSCollectionLayoutSection {
@@ -204,6 +225,8 @@ extension CollectionView: UICollectionViewDataSource {
             return data.count
         case .frequentVisitors(let data):
             return data.count
+        case .chartVisitorsCell(let data):
+            return data.count
         }
     }
 
@@ -231,6 +254,10 @@ extension CollectionView: UICollectionViewDataSource {
         case .frequentVisitors(let data):
             let cell: FrequentVisitorsCell = self.dequeueReusableCell(withReuseIdentifier: FrequentVisitorsCell.reuseIdentifier, for: indexPath)  as! FrequentVisitorsCell
             cell.data = data[indexPath.row]
+            return cell
+        case .chartVisitorsCell(let data):
+            let cell: ChartVisitorsCell = self.dequeueReusableCell(withReuseIdentifier: ChartVisitorsCell.reuseIdentifier, for: indexPath)  as! ChartVisitorsCell
+            cell.data = data[indexPath.row].statistics
             return cell
         }
     }
@@ -280,6 +307,8 @@ extension CollectionView: UICollectionViewDelegateFlowLayout {
             header.title = "Пол и возраст"
         case .frequentVisitors:
             header.title = "Чаще всех посещают Ваш профиль"
+        case .chartVisitorsCell:
+            break
         }
 
         return header

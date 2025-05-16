@@ -40,39 +40,18 @@ class FrequentVisitorsCell: UICollectionViewCell {
     }
 
     private func setupUI() {
-            contentView.addSubview(verticalStackView)
-            contentView.backgroundColor = .white
-            contentView.layer.cornerRadius = 14
-            contentView.clipsToBounds = true
+        contentView.addSubview(verticalStackView)
+        contentView.backgroundColor = .white
+        contentView.layer.cornerRadius = 14
+        contentView.clipsToBounds = true
 
-            NSLayoutConstraint.activate([
-                verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-                verticalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-                verticalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-                verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-            ])
-        }
-
-//    private func getVerticalStackView(visitor: Visitor) -> UIStackView {
-//        let stackView = UIStackView()
-//        stackView.axis = .horizontal
-//        stackView.alignment = .fill
-//        stackView.spacing = 12
-//
-//        let avatarImageView = UIImageView()
-//        avatarImageView.image = UIImage(systemName: "person.circle")
-//        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        let elipsImageView = UIImageView()
-//        elipsImageView.image = UIImage.ellipse
-//        elipsImageView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        DispatchQueue.main.async {
-//            avatarImageView.kf.setImage(with: URL(string: visitor.files[0].url))
-//        }
-//
-//        return stackView
-//    }
+        NSLayoutConstraint.activate([
+            verticalStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            verticalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            verticalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            verticalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+    }
 
     private func getHorizontalStackView(visitor: Visitor) -> UIStackView {
         let stackView = UIStackView()
@@ -111,7 +90,7 @@ class FrequentVisitorsCell: UICollectionViewCell {
         nameLabel.font = .systemFont(ofSize: 14, weight: .medium)
         nameLabel.textAlignment = .left
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-
+        
         stackView.addArrangedSubview(avatarImageView)
         stackView.addArrangedSubview(nameLabel)
         stackView.addArrangedSubview(arrowImageView)

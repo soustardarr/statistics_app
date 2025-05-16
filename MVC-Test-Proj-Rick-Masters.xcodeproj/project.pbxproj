@@ -22,6 +22,8 @@
 		7CDD276B2DD67CFC0075BEE9 /* SubUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD276A2DD67CFC0075BEE9 /* SubUsersCell.swift */; };
 		7CDD276D2DD713050075BEE9 /* FrequentVisitorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD276C2DD713050075BEE9 /* FrequentVisitorsCell.swift */; };
 		7CDD27702DD7194A0075BEE9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD276F2DD7194A0075BEE9 /* Kingfisher */; };
+		7CDD27722DD777C90075BEE9 /* ChartVisitorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27712DD777C90075BEE9 /* ChartVisitorsCell.swift */; };
+		7CDD27752DD77B6D0075BEE9 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD27742DD77B6D0075BEE9 /* DGCharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		7CDD27672DD65D0F0075BEE9 /* Extensions+UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		7CDD276A2DD67CFC0075BEE9 /* SubUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubUsersCell.swift; sourceTree = "<group>"; };
 		7CDD276C2DD713050075BEE9 /* FrequentVisitorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentVisitorsCell.swift; sourceTree = "<group>"; };
+		7CDD27712DD777C90075BEE9 /* ChartVisitorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVisitorsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CDD27702DD7194A0075BEE9 /* Kingfisher in Frameworks */,
+				7CDD27752DD77B6D0075BEE9 /* DGCharts in Frameworks */,
 				7CDD27612DD634C40075BEE9 /* PinLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +108,7 @@
 				7CDD27652DD6588D0075BEE9 /* IntervalCell.swift */,
 				7CDD276A2DD67CFC0075BEE9 /* SubUsersCell.swift */,
 				7CDD276C2DD713050075BEE9 /* FrequentVisitorsCell.swift */,
+				7CDD27712DD777C90075BEE9 /* ChartVisitorsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			packageProductDependencies = (
 				7CDD27602DD634C40075BEE9 /* PinLayout */,
 				7CDD276F2DD7194A0075BEE9 /* Kingfisher */,
+				7CDD27742DD77B6D0075BEE9 /* DGCharts */,
 			);
 			productName = "MVC-Test-Proj-Rick-Masters";
 			productReference = 7CDD272E2DD611470075BEE9 /* MVC-Test-Proj-Rick-Masters.app */;
@@ -167,6 +173,7 @@
 			packageReferences = (
 				7CDD275F2DD634C40075BEE9 /* XCRemoteSwiftPackageReference "PinLayout" */,
 				7CDD276E2DD7194A0075BEE9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7CDD27732DD77B6D0075BEE9 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7CDD272F2DD611470075BEE9 /* Products */;
@@ -206,6 +213,7 @@
 				7CDD275C2DD62C670075BEE9 /* HeaderCollectionViewCell.swift in Sources */,
 				7CDD27582DD613CB0075BEE9 /* CollectionView.swift in Sources */,
 				7CDD27562DD611830075BEE9 /* ViewController.swift in Sources */,
+				7CDD27722DD777C90075BEE9 /* ChartVisitorsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +444,14 @@
 				minimumVersion = 8.3.2;
 			};
 		};
+		7CDD27732DD77B6D0075BEE9 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -448,6 +464,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7CDD276E2DD7194A0075BEE9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		7CDD27742DD77B6D0075BEE9 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CDD27732DD77B6D0075BEE9 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

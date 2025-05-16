@@ -36,6 +36,30 @@ class ViewController: UIViewController {
                 .init(isSelected: false, typeView: .onMonth)
             ]),
 
+            .chartVisitorsCell([
+                ArrayStatistics(statistics: [
+                    Statistics(user_id: 1, type: .view, dates: [5092024,
+                                                                20092024,
+                                                                10092024,
+                                                                10092024,
+                                                                
+                                                                11092024]),
+                    Statistics(user_id: 2, type: .view, dates: [5092024,
+                                                                20092024,
+                                                                10092024,
+                                                                10092024,
+                                                                6092024,
+                                                                11092024]),
+                    Statistics(user_id: 3, type: .view, dates: [ 4092024]),
+                    Statistics(user_id: 4, type: .view, dates: [
+                                                                20092024,
+
+                                                                10092024,
+
+                                                                11092024]),
+                ])
+            ]),
+
             .frequentVisitors(
                 [
                     FrequentVisitors(
