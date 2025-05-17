@@ -24,6 +24,8 @@
 		7CDD27702DD7194A0075BEE9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD276F2DD7194A0075BEE9 /* Kingfisher */; };
 		7CDD27722DD777C90075BEE9 /* ChartVisitorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27712DD777C90075BEE9 /* ChartVisitorsCell.swift */; };
 		7CDD27752DD77B6D0075BEE9 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD27742DD77B6D0075BEE9 /* DGCharts */; };
+		7CDD27772DD8B6E10075BEE9 /* VisitorsAndStatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27762DD8B6E10075BEE9 /* VisitorsAndStatisticsCell.swift */; };
+		7CDD277A2DD8D22E0075BEE9 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27792DD8D22E0075BEE9 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		7CDD276A2DD67CFC0075BEE9 /* SubUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubUsersCell.swift; sourceTree = "<group>"; };
 		7CDD276C2DD713050075BEE9 /* FrequentVisitorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequentVisitorsCell.swift; sourceTree = "<group>"; };
 		7CDD27712DD777C90075BEE9 /* ChartVisitorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVisitorsCell.swift; sourceTree = "<group>"; };
+		7CDD27762DD8B6E10075BEE9 /* VisitorsAndStatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsAndStatisticsCell.swift; sourceTree = "<group>"; };
+		7CDD27792DD8D22E0075BEE9 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,6 @@
 		7CDD274F2DD611830075BEE9 /* MVC-Test-Proj-Rick-Masters */ = {
 			isa = PBXGroup;
 			children = (
-				7CDD27692DD662EE0075BEE9 /* Extensions */,
 				7CDD27462DD611830075BEE9 /* AppDelegate.swift */,
 				7CDD27472DD611830075BEE9 /* Assets.xcassets */,
 				7CDD27482DD611830075BEE9 /* Info.plist */,
@@ -86,6 +89,7 @@
 				7CDD274D2DD611830075BEE9 /* SceneDelegate.swift */,
 				7CDD274E2DD611830075BEE9 /* ViewController.swift */,
 				7CDD27622DD658380075BEE9 /* Collection */,
+				7CDD27692DD662EE0075BEE9 /* Extensions */,
 			);
 			path = "MVC-Test-Proj-Rick-Masters";
 			sourceTree = "<group>";
@@ -103,12 +107,14 @@
 		7CDD27632DD6584E0075BEE9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7CDD27782DD8D2110075BEE9 /* Custom Views */,
 				7CDD275D2DD631D60075BEE9 /* ViewUsersCell.swift */,
 				7CDD275B2DD62C670075BEE9 /* HeaderCollectionViewCell.swift */,
 				7CDD27652DD6588D0075BEE9 /* IntervalCell.swift */,
 				7CDD276A2DD67CFC0075BEE9 /* SubUsersCell.swift */,
 				7CDD276C2DD713050075BEE9 /* FrequentVisitorsCell.swift */,
 				7CDD27712DD777C90075BEE9 /* ChartVisitorsCell.swift */,
+				7CDD27762DD8B6E10075BEE9 /* VisitorsAndStatisticsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -119,6 +125,14 @@
 				7CDD27672DD65D0F0075BEE9 /* Extensions+UICollectionViewCell.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7CDD27782DD8D2110075BEE9 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				7CDD27792DD8D22E0075BEE9 /* CircleView.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CDD276D2DD713050075BEE9 /* FrequentVisitorsCell.swift in Sources */,
+				7CDD27772DD8B6E10075BEE9 /* VisitorsAndStatisticsCell.swift in Sources */,
 				7CDD275E2DD631D60075BEE9 /* ViewUsersCell.swift in Sources */,
 				7CDD27682DD65D0F0075BEE9 /* Extensions+UICollectionViewCell.swift in Sources */,
 				7CDD275A2DD61BCC0075BEE9 /* Sections.swift in Sources */,
@@ -213,6 +228,7 @@
 				7CDD275C2DD62C670075BEE9 /* HeaderCollectionViewCell.swift in Sources */,
 				7CDD27582DD613CB0075BEE9 /* CollectionView.swift in Sources */,
 				7CDD27562DD611830075BEE9 /* ViewController.swift in Sources */,
+				7CDD277A2DD8D22E0075BEE9 /* CircleView.swift in Sources */,
 				7CDD27722DD777C90075BEE9 /* ChartVisitorsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

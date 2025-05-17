@@ -26,6 +26,100 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+
+        let statistics: [Statistics] = [
+            Statistics(user_id: 1, type: .view, dates: [5092024,
+                                                        17052024,
+                                                        17052024,
+                                                        17052024,
+                                                        17052024,
+                                                        18052024,
+                                                        19052024,
+                                                        20052024,
+                                                        21052024,
+                                                        22052024,
+                                                        10092024,
+                                                        10092024,
+                                                        10102024,
+                                                        11102024,
+                                                        11122024,
+                                                        11122024,
+
+                                                        11092024]),
+            Statistics(user_id: 2, type: .view, dates: [5092024,
+                                                        20092024,
+                                                        10092024,
+                                                        10092024,
+                                                        6092024,
+                                                        11092024]),
+            Statistics(user_id: 3, type: .view, dates: [ 4092024]),
+            Statistics(user_id: 4, type: .view, dates: [
+                                                        20092024,
+
+                                                        10092024,
+
+                                                        11092024]),
+        ]
+
+        let visitors: [Visitor] = [
+            Visitor(
+                userName: "qpqpqppq",
+                id: 3,
+                sex: .M,
+                age: 12,
+                isOnline: false,
+                files: [
+                    File(
+                        id: 3,
+                        url: "https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg",
+                        type: .avatar
+                    )
+                ]
+            ),
+            Visitor(
+                userName: "qpqpqppq",
+                id: 3,
+                sex: .M,
+                age: 12,
+                isOnline: false,
+                files: [
+                    File(
+                        id: 3,
+                        url: "https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg",
+                        type: .avatar
+                    )
+                ]
+            ),
+            Visitor(
+                userName: "GGGGG",
+                id: 1,
+                sex: .M,
+                age: 12,
+                isOnline: true,
+                files: [
+                    File(
+                        id: 1,
+                        url: "https://img.freepik.com/free-photo/front-view-of-man-with-headphones-in-the-city_23-2148573065.jpg",
+                        type: .avatar
+                    )
+                ]
+            ),
+            Visitor(
+                userName: "GGdasdasd",
+                id: 2,
+                sex: .F,
+                age: 12,
+                isOnline: true,
+                files: [
+                    File(
+                        id: 2,
+                        url: "https://img.freepik.com/premium-photo/young-woman-smiles-while-walking-in-a-city-street-during-the-day_906809-27175.jpg",
+                        type: .avatar
+                    )
+                ]
+            )
+        ]
+
         collectionView.sections = [
             .usersView([
                 .init(count: 1321, type: .view)
@@ -37,94 +131,13 @@ class ViewController: UIViewController {
             ]),
 
             .chartVisitorsCell([
-                ArrayStatistics(statistics: [
-                    Statistics(user_id: 1, type: .view, dates: [5092024,
-                                                                20092024,
-                                                                10092024,
-                                                                10092024,
-                                                                10102024,
-                                                                11102024,
-                                                                11122024,
-                                                                11122024,
-
-                                                                11092024]),
-                    Statistics(user_id: 2, type: .view, dates: [5092024,
-                                                                20092024,
-                                                                10092024,
-                                                                10092024,
-                                                                6092024,
-                                                                11092024]),
-                    Statistics(user_id: 3, type: .view, dates: [ 4092024]),
-                    Statistics(user_id: 4, type: .view, dates: [
-                                                                20092024,
-
-                                                                10092024,
-
-                                                                11092024]),
-                ])
+                ArrayStatistics(statistics: statistics)
             ]),
 
             .frequentVisitors(
                 [
                     FrequentVisitors(
-                        visitors: [
-                            Visitor(
-                                userName: "GGGGG",
-                                id: 1,
-                                sex: .M,
-                                age: 12,
-                                isOnline: true,
-                                files: [
-                                    File(
-                                        id: 1,
-                                        url: "https://img.freepik.com/free-photo/front-view-of-man-with-headphones-in-the-city_23-2148573065.jpg",
-                                        type: .avatar
-                                    )
-                                ]
-                            ),
-                            Visitor(
-                                userName: "GGdasdasd",
-                                id: 2,
-                                sex: .F,
-                                age: 12,
-                                isOnline: true,
-                                files: [
-                                    File(
-                                        id: 2,
-                                        url: "https://img.freepik.com/premium-photo/young-woman-smiles-while-walking-in-a-city-street-during-the-day_906809-27175.jpg",
-                                        type: .avatar
-                                    )
-                                ]
-                            ),
-                            Visitor(
-                                userName: "qpqpqppq",
-                                id: 3,
-                                sex: .M,
-                                age: 12,
-                                isOnline: false,
-                                files: [
-                                    File(
-                                        id: 3,
-                                        url: "https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg",
-                                        type: .avatar
-                                    )
-                                ]
-                            ),
-                            Visitor(
-                                userName: "qpqpqppq",
-                                id: 3,
-                                sex: .M,
-                                age: 12,
-                                isOnline: false,
-                                files: [
-                                    File(
-                                        id: 3,
-                                        url: "https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg",
-                                        type: .avatar
-                                    )
-                                ]
-                            ),
-                        ]
+                        visitors: visitors
                     )
                 ]
             ),
@@ -135,6 +148,9 @@ class ViewController: UIViewController {
                 .init(isSelected: false, typeView: .month),
                 .init(isSelected: false, typeView: .allTime),
             ]),
+
+            .visitorsAndStatisticsCell([VisitorsAndStatistics(visitors: visitors, statistics: statistics)]),
+
             .usersSub([
                 .init(
                     usersSub: UsersView(
@@ -175,7 +191,7 @@ class ViewController: UIViewController {
             .below(of: titleLabel)
             .marginTop(20)
             .horizontally()
-            .bottom(20)
+            .bottom()
 
     }
 }

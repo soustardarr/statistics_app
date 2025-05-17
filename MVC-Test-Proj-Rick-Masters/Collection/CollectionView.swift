@@ -42,6 +42,7 @@ class CollectionView: UICollectionView {
         register(SubUsersCell.self, forCellWithReuseIdentifier: SubUsersCell.reuseIdentifier)
         register(FrequentVisitorsCell.self, forCellWithReuseIdentifier: FrequentVisitorsCell.reuseIdentifier)
         register(ChartVisitorsCell.self, forCellWithReuseIdentifier: ChartVisitorsCell.reuseIdentifier)
+        register(VisitorsAndStatisticsCell.self, forCellWithReuseIdentifier: VisitorsAndStatisticsCell.reuseIdentifier)
     }
 
     private func createLayoutSection(
@@ -94,9 +95,30 @@ class CollectionView: UICollectionView {
                 return self.frequentVisitorsLayoutSection()
             case .chartVisitorsCell:
                 return self.statisticsLayoutSection()
+            case .visitorsAndStatisticsCell:
+                return self.visitorsAndStatisticsLayoutSection()
             }
         }
     }
+
+    private func visitorsAndStatisticsLayoutSection() -> NSCollectionLayoutSection {
+        let itemSize = calculateLayoutSize(width: .fractionalWidth(1), height: .estimated(529))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+
+        let groupSize = calculateLayoutSize(width: .fractionalWidth(1), height: .estimated(529))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+        let section = createLayoutSection(
+            group: group,
+            behaviour: .none,
+            interGroupSpacing: 0,
+            hasHeader: false,
+            contentInsets: .init(top: 0, leading: 16, bottom: 0, trailing: 16)
+        )
+        return section
+    }
+
 
     private func statisticsLayoutSection() -> NSCollectionLayoutSection {
         let itemSize = calculateLayoutSize(width: .fractionalWidth(1), height: .estimated(208))
@@ -223,6 +245,8 @@ extension CollectionView: UICollectionViewDataSource {
             return data.count
         case .chartVisitorsCell(let data):
             return data.count
+        case .visitorsAndStatisticsCell(let data):
+            return data.count
         }
     }
 
@@ -256,6 +280,11 @@ extension CollectionView: UICollectionViewDataSource {
             cell.data = data[indexPath.row].statistics
             cell.dateInterval = .onDay
             return cell
+        case .visitorsAndStatisticsCell(let data):
+            let cell: VisitorsAndStatisticsCell = self.dequeueReusableCell(withReuseIdentifier: VisitorsAndStatisticsCell.reuseIdentifier, for: indexPath)  as! VisitorsAndStatisticsCell
+            cell.data = data[indexPath.row]
+            cell.dateInterval = .day
+            return cell
         }
     }
 }
@@ -274,7 +303,6 @@ extension CollectionView: UICollectionViewDelegate {
 
             let typeView = data[indexPath.row].typeView
 
-            // Find the chart section and update the ChartVisitorsCell
             if let chartSectionIndex = sections.firstIndex(where: {
                 if case .chartVisitorsCell = $0 { return true }
                 return false
@@ -291,6 +319,18 @@ extension CollectionView: UICollectionViewDelegate {
             }
             sections[indexPath.section] = .genderIntervals(data)
             reloadSections(IndexSet(integer: indexPath.section))
+
+            let typeView = data[indexPath.row].typeView
+
+            if let visitorsStatsSectionIndex = sections.firstIndex(where: {
+                if case .visitorsAndStatisticsCell = $0 { return true }
+                return false
+            }) {
+                let visitorsStatsIndexPath = IndexPath(item: 0, section: visitorsStatsSectionIndex)
+                if let visitorsStatsCell = collectionView.cellForItem(at: visitorsStatsIndexPath) as? VisitorsAndStatisticsCell {
+                    visitorsStatsCell.dateInterval = typeView
+                }
+            }
 
         default:
             break
@@ -326,6 +366,8 @@ extension CollectionView: UICollectionViewDelegateFlowLayout {
         case .frequentVisitors:
             header.title = "Чаще всех посещают Ваш профиль"
         case .chartVisitorsCell:
+            break
+        case .visitorsAndStatisticsCell(_):
             break
         }
 

@@ -14,10 +14,16 @@ enum Sections {
     case usersSub([UsersSubs])
     case frequentVisitors([FrequentVisitors])
     case chartVisitorsCell([ArrayStatistics])
+    case visitorsAndStatisticsCell([VisitorsAndStatistics])
 }
 
 struct FrequentVisitors {
     let visitors: [Visitor]
+}
+
+struct VisitorsAndStatistics {
+    let visitors: [Visitor]
+    let statistics: [Statistics]
 }
 
 struct Visitor {
