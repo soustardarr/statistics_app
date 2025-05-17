@@ -10,11 +10,7 @@ import UIKit
 class CollectionView: UICollectionView {
 
     // MARK: - переменные
-    var sections: [Sections] = [] {
-        didSet {
-            reloadData()
-        }
-    }
+    var sections: [Sections] = []
 
     // MARK: - конструкторы
 
@@ -258,6 +254,7 @@ extension CollectionView: UICollectionViewDataSource {
         case .chartVisitorsCell(let data):
             let cell: ChartVisitorsCell = self.dequeueReusableCell(withReuseIdentifier: ChartVisitorsCell.reuseIdentifier, for: indexPath)  as! ChartVisitorsCell
             cell.data = data[indexPath.row].statistics
+            cell.dateInterval = .onDay
             return cell
         }
     }
@@ -265,19 +262,40 @@ extension CollectionView: UICollectionViewDataSource {
 
 extension CollectionView: UICollectionViewDelegate {
 
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        switch sections[indexPath.section] {
-//        case .usersView:
-//            break
-//        case .dateIntervals:
-//            
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch sections[indexPath.section] {
+        case .dateIntervals(var data):
+            for i in data.indices {
+                data[i].isSelected = (i == indexPath.row)
+            }
+            sections[indexPath.section] = .dateIntervals(data)
+            reloadSections(IndexSet(integer: indexPath.section))
 
 
+            let typeView = data[indexPath.row].typeView
 
+            // Find the chart section and update the ChartVisitorsCell
+            if let chartSectionIndex = sections.firstIndex(where: {
+                if case .chartVisitorsCell = $0 { return true }
+                return false
+            }) {
+                let chartIndexPath = IndexPath(item: 0, section: chartSectionIndex)
+                if let chartCell = collectionView.cellForItem(at: chartIndexPath) as? ChartVisitorsCell {
+                    chartCell.dateInterval = typeView
+                }
+            }
 
-    
+        case .genderIntervals(var data):
+            for i in data.indices {
+                data[i].isSelected = (i == indexPath.row)
+            }
+            sections[indexPath.section] = .genderIntervals(data)
+            reloadSections(IndexSet(integer: indexPath.section))
+
+        default:
+            break
+        }
+    }
 }
 
 extension CollectionView: UICollectionViewDelegateFlowLayout {

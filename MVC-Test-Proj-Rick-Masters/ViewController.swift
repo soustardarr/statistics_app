@@ -31,8 +31,8 @@ class ViewController: UIViewController {
                 .init(count: 1321, type: .view)
             ]),
             .dateIntervals([
-                .init(isSelected: false, typeView: .onDay),
-                .init(isSelected: true, typeView: .onWeek),
+                .init(isSelected: true, typeView: .onDay),
+                .init(isSelected: false, typeView: .onWeek),
                 .init(isSelected: false, typeView: .onMonth)
             ]),
 
@@ -42,7 +42,11 @@ class ViewController: UIViewController {
                                                                 20092024,
                                                                 10092024,
                                                                 10092024,
-                                                                
+                                                                10102024,
+                                                                11102024,
+                                                                11122024,
+                                                                11122024,
+
                                                                 11092024]),
                     Statistics(user_id: 2, type: .view, dates: [5092024,
                                                                 20092024,
@@ -143,6 +147,7 @@ class ViewController: UIViewController {
             ]),
         ]
 
+        collectionView.reloadData()
     }
 
     override func viewDidLayoutSubviews() {
