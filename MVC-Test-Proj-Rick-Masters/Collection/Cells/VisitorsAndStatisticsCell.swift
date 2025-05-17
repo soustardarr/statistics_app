@@ -212,6 +212,21 @@ class VisitorsAndStatisticsCell: UICollectionViewCell {
             ageStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             ageStackView.widthAnchor.constraint(equalToConstant: 50)
         ])
-    }
 
+        let ageLabels = [age18To21, age22To25, age26To30, age31To35, age36To40, age40To50, ageAbove50]
+        for (index, label) in ageLabels.enumerated() {
+            let twoLinesView = TwoLinesView(frame: .zero)
+            twoLinesView.data = TwoLinesView.Data(manPercentage: 0.21, womanPercentage: 0.60)
+            contentView.addSubview(twoLinesView)
+
+            NSLayoutConstraint.activate([
+                twoLinesView.widthAnchor.constraint(equalToConstant: 230),
+                twoLinesView.heightAnchor.constraint(equalToConstant: 27),
+                twoLinesView.leadingAnchor.constraint(equalTo: ageStackView.trailingAnchor, constant: 30),
+                twoLinesView.topAnchor.constraint(equalTo: lineView.topAnchor, constant: CGFloat(index * 20))
+            ])
+        }
+
+        contentView.layoutIfNeeded()
+    }
 }

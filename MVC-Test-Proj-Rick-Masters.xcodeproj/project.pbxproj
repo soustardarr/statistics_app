@@ -26,6 +26,8 @@
 		7CDD27752DD77B6D0075BEE9 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD27742DD77B6D0075BEE9 /* DGCharts */; };
 		7CDD27772DD8B6E10075BEE9 /* VisitorsAndStatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27762DD8B6E10075BEE9 /* VisitorsAndStatisticsCell.swift */; };
 		7CDD277A2DD8D22E0075BEE9 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27792DD8D22E0075BEE9 /* CircleView.swift */; };
+		7CDD277C2DD8E8770075BEE9 /* TwoLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD277B2DD8E8770075BEE9 /* TwoLinesView.swift */; };
+		7CDD277E2DD8E89C0075BEE9 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD277D2DD8E89C0075BEE9 /* LineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		7CDD27712DD777C90075BEE9 /* ChartVisitorsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVisitorsCell.swift; sourceTree = "<group>"; };
 		7CDD27762DD8B6E10075BEE9 /* VisitorsAndStatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsAndStatisticsCell.swift; sourceTree = "<group>"; };
 		7CDD27792DD8D22E0075BEE9 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		7CDD277B2DD8E8770075BEE9 /* TwoLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLinesView.swift; sourceTree = "<group>"; };
+		7CDD277D2DD8E89C0075BEE9 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				7CDD27792DD8D22E0075BEE9 /* CircleView.swift */,
+				7CDD277B2DD8E8770075BEE9 /* TwoLinesView.swift */,
+				7CDD277D2DD8E89C0075BEE9 /* LineView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -225,8 +231,10 @@
 				7CDD27662DD6588D0075BEE9 /* IntervalCell.swift in Sources */,
 				7CDD27542DD611830075BEE9 /* AppDelegate.swift in Sources */,
 				7CDD27552DD611830075BEE9 /* SceneDelegate.swift in Sources */,
+				7CDD277C2DD8E8770075BEE9 /* TwoLinesView.swift in Sources */,
 				7CDD275C2DD62C670075BEE9 /* HeaderCollectionViewCell.swift in Sources */,
 				7CDD27582DD613CB0075BEE9 /* CollectionView.swift in Sources */,
+				7CDD277E2DD8E89C0075BEE9 /* LineView.swift in Sources */,
 				7CDD27562DD611830075BEE9 /* ViewController.swift in Sources */,
 				7CDD277A2DD8D22E0075BEE9 /* CircleView.swift in Sources */,
 				7CDD27722DD777C90075BEE9 /* ChartVisitorsCell.swift in Sources */,
