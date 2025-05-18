@@ -12,6 +12,7 @@ class VisitorsAndStatisticsCell: UICollectionViewCell {
         didSet {
             guard let _ = data else { return }
             updateCircle()
+            updateProgress()
         }
     }
 
@@ -163,6 +164,8 @@ class VisitorsAndStatisticsCell: UICollectionViewCell {
         return stack
     }()
 
+    var dictLines: [String: TwoLinesView] = [:]
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -225,9 +228,13 @@ class VisitorsAndStatisticsCell: UICollectionViewCell {
 
     private func updateProgress() {
         let ageLabels = [age18To21, age22To25, age26To30, age31To35, age36To40, age40To50, ageAbove50]
+        dictLines.values.forEach { twoLinesView in
+            twoLinesView.removeFromSuperview()
+        }
+        dictLines.removeAll()
         for (_, label) in ageLabels.enumerated() {
             let twoLinesView = TwoLinesView(frame: .zero)
-
+            dictLines[label.text!] = twoLinesView
             twoLinesView.data = VisitorsAndStatisticsDataMapper.getPercentageManWomanOnIntervalWithAge(
                 dateInterval: dateInterval ?? .day,
                 visitorsAndStatistics: data,
