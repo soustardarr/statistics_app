@@ -17,16 +17,16 @@ enum Sections {
     case visitorsAndStatisticsCell([VisitorsAndStatistics])
 }
 
-struct FrequentVisitors {
+struct FrequentVisitors: Decodable  {
     let visitors: [Visitor]
 }
 
-struct VisitorsAndStatistics {
+struct VisitorsAndStatistics: Decodable {
     let visitors: [Visitor]
     let statistics: [Statistics]
 }
 
-struct Visitor {
+struct Visitor: Decodable  {
     let userName: String
     let id: Int
     let sex: Sex
@@ -34,7 +34,7 @@ struct Visitor {
     let isOnline: Bool
     let files: [File]
 
-    enum Sex: String {
+    enum Sex: String, Decodable {
         case M = "M"
         case F = "F"
     }
@@ -49,29 +49,29 @@ struct Visitor {
     }
 }
 
-struct File {
+struct File: Decodable  {
     let id: Int
     let url: String
     let type: TypeFile
 
-    enum TypeFile: String {
+    enum TypeFile: String, Decodable {
         case avatar = "avatar"
     }
 }
 
 
-struct UsersSubs {
+struct UsersSubs: Decodable  {
     let usersSub: UsersView
     let usersUn: UsersView
 }
 
 
-struct UsersView {
+struct UsersView: Decodable  {
     var count: Int
     var type: UsersViewType
 }
 
-enum UsersViewType {
+enum UsersViewType: Decodable  {
     case subscription
     case unsubscription
     case view
@@ -92,7 +92,7 @@ struct DateInterval {
     }
 }
 
-struct ArrayStatistics {
+struct ArrayStatistics: Decodable  {
     let statistics: [Statistics]
 }
 

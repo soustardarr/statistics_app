@@ -29,6 +29,10 @@
 		7CDD277C2DD8E8770075BEE9 /* TwoLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD277B2DD8E8770075BEE9 /* TwoLinesView.swift */; };
 		7CDD277E2DD8E89C0075BEE9 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD277D2DD8E89C0075BEE9 /* LineView.swift */; };
 		7CDD27812DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27802DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift */; };
+		7CDD27872DDA05FF0075BEE9 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27862DDA05FF0075BEE9 /* ViewControllerAssembly.swift */; };
+		7CDD27892DDA06440075BEE9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27882DDA06440075BEE9 /* NetworkManager.swift */; };
+		7CDD278B2DDA06530075BEE9 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD278A2DDA06530075BEE9 /* StorageManager.swift */; };
+		7CDD278D2DDA06680075BEE9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD278C2DDA06680075BEE9 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		7CDD277B2DD8E8770075BEE9 /* TwoLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLinesView.swift; sourceTree = "<group>"; };
 		7CDD277D2DD8E89C0075BEE9 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		7CDD27802DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsAndStatisticsDataMapper.swift; sourceTree = "<group>"; };
+		7CDD27862DDA05FF0075BEE9 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
+		7CDD27882DDA06440075BEE9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7CDD278A2DDA06530075BEE9 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		7CDD278C2DDA06680075BEE9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,15 +96,13 @@
 		7CDD274F2DD611830075BEE9 /* MVC-Test-Proj-Rick-Masters */ = {
 			isa = PBXGroup;
 			children = (
-				7CDD27462DD611830075BEE9 /* AppDelegate.swift */,
-				7CDD27472DD611830075BEE9 /* Assets.xcassets */,
-				7CDD27482DD611830075BEE9 /* Info.plist */,
-				7CDD274A2DD611830075BEE9 /* LaunchScreen.storyboard */,
-				7CDD274D2DD611830075BEE9 /* SceneDelegate.swift */,
-				7CDD274E2DD611830075BEE9 /* ViewController.swift */,
-				7CDD27622DD658380075BEE9 /* Collection */,
-				7CDD27692DD662EE0075BEE9 /* Extensions */,
+				7CDD27822DDA04490075BEE9 /* App */,
+				7CDD278E2DDA06790075BEE9 /* Services */,
+				7CDD27842DDA04B00075BEE9 /* MVC */,
+				7CDD27852DDA04C70075BEE9 /* CustomViews */,
 				7CDD277F2DD9FC8E0075BEE9 /* DataMappers */,
+				7CDD27692DD662EE0075BEE9 /* Extensions */,
+				7CDD27832DDA04640075BEE9 /* Resources */,
 			);
 			path = "MVC-Test-Proj-Rick-Masters";
 			sourceTree = "<group>";
@@ -150,6 +156,52 @@
 				7CDD27802DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift */,
 			);
 			path = DataMappers;
+			sourceTree = "<group>";
+		};
+		7CDD27822DDA04490075BEE9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7CDD274D2DD611830075BEE9 /* SceneDelegate.swift */,
+				7CDD27462DD611830075BEE9 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		7CDD27832DDA04640075BEE9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7CDD274A2DD611830075BEE9 /* LaunchScreen.storyboard */,
+				7CDD27482DD611830075BEE9 /* Info.plist */,
+				7CDD27472DD611830075BEE9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7CDD27842DDA04B00075BEE9 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				7CDD274E2DD611830075BEE9 /* ViewController.swift */,
+				7CDD278C2DDA06680075BEE9 /* Model.swift */,
+				7CDD27862DDA05FF0075BEE9 /* ViewControllerAssembly.swift */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		7CDD27852DDA04C70075BEE9 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				7CDD27622DD658380075BEE9 /* Collection */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		7CDD278E2DDA06790075BEE9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7CDD278A2DDA06530075BEE9 /* StorageManager.swift */,
+				7CDD27882DDA06440075BEE9 /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,11 +285,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CDD278D2DDA06680075BEE9 /* Model.swift in Sources */,
+				7CDD27892DDA06440075BEE9 /* NetworkManager.swift in Sources */,
 				7CDD276D2DD713050075BEE9 /* FrequentVisitorsCell.swift in Sources */,
 				7CDD27772DD8B6E10075BEE9 /* VisitorsAndStatisticsCell.swift in Sources */,
+				7CDD27872DDA05FF0075BEE9 /* ViewControllerAssembly.swift in Sources */,
 				7CDD275E2DD631D60075BEE9 /* ViewUsersCell.swift in Sources */,
 				7CDD27682DD65D0F0075BEE9 /* Extensions+UICollectionViewCell.swift in Sources */,
 				7CDD275A2DD61BCC0075BEE9 /* Sections.swift in Sources */,
+				7CDD278B2DDA06530075BEE9 /* StorageManager.swift in Sources */,
 				7CDD276B2DD67CFC0075BEE9 /* SubUsersCell.swift in Sources */,
 				7CDD27662DD6588D0075BEE9 /* IntervalCell.swift in Sources */,
 				7CDD27542DD611830075BEE9 /* AppDelegate.swift in Sources */,
@@ -276,7 +332,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YFP38JZYYX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "MVC-Test-Proj-Rick-Masters/Info.plist";
+				INFOPLIST_FILE = "MVC-Test-Proj-Rick-Masters/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -303,7 +359,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YFP38JZYYX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "MVC-Test-Proj-Rick-Masters/Info.plist";
+				INFOPLIST_FILE = "MVC-Test-Proj-Rick-Masters/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
