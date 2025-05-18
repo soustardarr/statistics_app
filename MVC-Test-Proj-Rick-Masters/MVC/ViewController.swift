@@ -10,7 +10,7 @@ import PinLayout
 
 class ViewController: UIViewController {
 
-    var model: Model!
+//    var model: Model!
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()

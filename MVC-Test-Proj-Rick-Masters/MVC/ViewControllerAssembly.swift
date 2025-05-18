@@ -6,14 +6,14 @@
 //
 
 import Foundation
+import BusinessLogicFramework
 
 class ViewControllerAssembly {
     static func assemble() -> ViewController {
-        let networkService = NetworkManager()
-        let storageService = StorageManager()
-        let model = Model(network: networkService, storage: storageService)
+        let network = NetworkService()
+        let storage = StorageService()
+        let model = Model(storage: storage, network: network)
         let viewController = ViewController()
-        viewController.model = model
         return viewController
     }
 }

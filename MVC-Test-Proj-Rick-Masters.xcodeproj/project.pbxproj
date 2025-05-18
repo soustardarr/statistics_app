@@ -30,13 +30,26 @@
 		7CDD277E2DD8E89C0075BEE9 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD277D2DD8E89C0075BEE9 /* LineView.swift */; };
 		7CDD27812DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27802DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift */; };
 		7CDD27872DDA05FF0075BEE9 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27862DDA05FF0075BEE9 /* ViewControllerAssembly.swift */; };
-		7CDD27892DDA06440075BEE9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27882DDA06440075BEE9 /* NetworkManager.swift */; };
-		7CDD278B2DDA06530075BEE9 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD278A2DDA06530075BEE9 /* StorageManager.swift */; };
-		7CDD278D2DDA06680075BEE9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD278C2DDA06680075BEE9 /* Model.swift */; };
 		7CDD27A32DDA24840075BEE9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD27A22DDA24840075BEE9 /* RxCocoa */; };
 		7CDD27A52DDA24840075BEE9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD27A42DDA24840075BEE9 /* RxSwift */; };
 		7CDD27AD2DDA32C60075BEE9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD27AC2DDA32C60075BEE9 /* RealmSwift */; };
+		7CDD27FC2DDA3D140075BEE9 /* BusinessLogicFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CDD27F62DDA3D140075BEE9 /* BusinessLogicFramework.framework */; };
+		7CDD27FD2DDA3D140075BEE9 /* BusinessLogicFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7CDD27F62DDA3D140075BEE9 /* BusinessLogicFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7CDD28082DDA3D360075BEE9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD28072DDA3D360075BEE9 /* RxSwift */; };
+		7CDD280A2DDA3D400075BEE9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD28092DDA3D400075BEE9 /* RxCocoa */; };
+		7CDD280C2DDA3D440075BEE9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD280B2DDA3D440075BEE9 /* RealmSwift */; };
+		7CDD280D2DDA3D440075BEE9 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD280B2DDA3D440075BEE9 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CDD27FA2DDA3D140075BEE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CDD27262DD611470075BEE9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CDD27F52DDA3D140075BEE9;
+			remoteInfo = BusinessLogicFramework;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		7CDD27A02DDA13BA0075BEE9 /* Embed Frameworks */ = {
@@ -45,6 +58,18 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7CDD27FD2DDA3D140075BEE9 /* BusinessLogicFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CDD280E2DDA3D440075BEE9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7CDD280D2DDA3D440075BEE9 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,10 +99,29 @@
 		7CDD277D2DD8E89C0075BEE9 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		7CDD27802DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsAndStatisticsDataMapper.swift; sourceTree = "<group>"; };
 		7CDD27862DDA05FF0075BEE9 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
-		7CDD27882DDA06440075BEE9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		7CDD278A2DDA06530075BEE9 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		7CDD278C2DDA06680075BEE9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		7CDD27F62DDA3D140075BEE9 /* BusinessLogicFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BusinessLogicFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		7CDD27FE2DDA3D140075BEE9 /* Exceptions for "BusinessLogicFramework" folder in "BusinessLogicFramework" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				BusinessLogicFramework.h,
+			);
+			target = 7CDD27F52DDA3D140075BEE9 /* BusinessLogicFramework */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		7CDD27F72DDA3D140075BEE9 /* BusinessLogicFramework */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7CDD27FE2DDA3D140075BEE9 /* Exceptions for "BusinessLogicFramework" folder in "BusinessLogicFramework" target */,
+			);
+			path = BusinessLogicFramework;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7CDD272B2DD611470075BEE9 /* Frameworks */ = {
@@ -87,9 +131,20 @@
 				7CDD27AD2DDA32C60075BEE9 /* RealmSwift in Frameworks */,
 				7CDD27702DD7194A0075BEE9 /* Kingfisher in Frameworks */,
 				7CDD27752DD77B6D0075BEE9 /* DGCharts in Frameworks */,
+				7CDD27FC2DDA3D140075BEE9 /* BusinessLogicFramework.framework in Frameworks */,
 				7CDD27A52DDA24840075BEE9 /* RxSwift in Frameworks */,
 				7CDD27A32DDA24840075BEE9 /* RxCocoa in Frameworks */,
 				7CDD27612DD634C40075BEE9 /* PinLayout in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CDD27F32DDA3D140075BEE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CDD280C2DDA3D440075BEE9 /* RealmSwift in Frameworks */,
+				7CDD280A2DDA3D400075BEE9 /* RxCocoa in Frameworks */,
+				7CDD28082DDA3D360075BEE9 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				7CDD274F2DD611830075BEE9 /* MVC-Test-Proj-Rick-Masters */,
+				7CDD27F72DDA3D140075BEE9 /* BusinessLogicFramework */,
+				7CDD28062DDA3D360075BEE9 /* Frameworks */,
 				7CDD272F2DD611470075BEE9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				7CDD272E2DD611470075BEE9 /* MVC-Test-Proj-Rick-Masters.app */,
+				7CDD27F62DDA3D140075BEE9 /* BusinessLogicFramework.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				7CDD27822DDA04490075BEE9 /* App */,
-				7CDD278E2DDA06790075BEE9 /* Services */,
 				7CDD27842DDA04B00075BEE9 /* MVC */,
 				7CDD27852DDA04C70075BEE9 /* CustomViews */,
 				7CDD277F2DD9FC8E0075BEE9 /* DataMappers */,
@@ -200,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				7CDD274E2DD611830075BEE9 /* ViewController.swift */,
-				7CDD278C2DDA06680075BEE9 /* Model.swift */,
 				7CDD27862DDA05FF0075BEE9 /* ViewControllerAssembly.swift */,
 			);
 			path = MVC;
@@ -214,16 +270,24 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		7CDD278E2DDA06790075BEE9 /* Services */ = {
+		7CDD28062DDA3D360075BEE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7CDD278A2DDA06530075BEE9 /* StorageManager.swift */,
-				7CDD27882DDA06440075BEE9 /* NetworkManager.swift */,
 			);
-			path = Services;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7CDD27F12DDA3D140075BEE9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		7CDD272D2DD611470075BEE9 /* MVC-Test-Proj-Rick-Masters */ = {
@@ -238,6 +302,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7CDD27FB2DDA3D140075BEE9 /* PBXTargetDependency */,
 			);
 			name = "MVC-Test-Proj-Rick-Masters";
 			packageProductDependencies = (
@@ -252,6 +317,33 @@
 			productReference = 7CDD272E2DD611470075BEE9 /* MVC-Test-Proj-Rick-Masters.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7CDD27F52DDA3D140075BEE9 /* BusinessLogicFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CDD27FF2DDA3D140075BEE9 /* Build configuration list for PBXNativeTarget "BusinessLogicFramework" */;
+			buildPhases = (
+				7CDD27F12DDA3D140075BEE9 /* Headers */,
+				7CDD27F22DDA3D140075BEE9 /* Sources */,
+				7CDD27F32DDA3D140075BEE9 /* Frameworks */,
+				7CDD27F42DDA3D140075BEE9 /* Resources */,
+				7CDD280E2DDA3D440075BEE9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7CDD27F72DDA3D140075BEE9 /* BusinessLogicFramework */,
+			);
+			name = BusinessLogicFramework;
+			packageProductDependencies = (
+				7CDD28072DDA3D360075BEE9 /* RxSwift */,
+				7CDD28092DDA3D400075BEE9 /* RxCocoa */,
+				7CDD280B2DDA3D440075BEE9 /* RealmSwift */,
+			);
+			productName = BusinessLogicFramework;
+			productReference = 7CDD27F62DDA3D140075BEE9 /* BusinessLogicFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -264,6 +356,10 @@
 				TargetAttributes = {
 					7CDD272D2DD611470075BEE9 = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					7CDD27F52DDA3D140075BEE9 = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
 					};
 				};
 			};
@@ -289,6 +385,7 @@
 			projectRoot = "";
 			targets = (
 				7CDD272D2DD611470075BEE9 /* MVC-Test-Proj-Rick-Masters */,
+				7CDD27F52DDA3D140075BEE9 /* BusinessLogicFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -303,6 +400,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CDD27F42DDA3D140075BEE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -310,15 +414,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CDD278D2DDA06680075BEE9 /* Model.swift in Sources */,
-				7CDD27892DDA06440075BEE9 /* NetworkManager.swift in Sources */,
 				7CDD276D2DD713050075BEE9 /* FrequentVisitorsCell.swift in Sources */,
 				7CDD27772DD8B6E10075BEE9 /* VisitorsAndStatisticsCell.swift in Sources */,
 				7CDD27872DDA05FF0075BEE9 /* ViewControllerAssembly.swift in Sources */,
 				7CDD275E2DD631D60075BEE9 /* ViewUsersCell.swift in Sources */,
 				7CDD27682DD65D0F0075BEE9 /* Extensions+UICollectionViewCell.swift in Sources */,
 				7CDD275A2DD61BCC0075BEE9 /* Sections.swift in Sources */,
-				7CDD278B2DDA06530075BEE9 /* StorageManager.swift in Sources */,
 				7CDD276B2DD67CFC0075BEE9 /* SubUsersCell.swift in Sources */,
 				7CDD27662DD6588D0075BEE9 /* IntervalCell.swift in Sources */,
 				7CDD27542DD611830075BEE9 /* AppDelegate.swift in Sources */,
@@ -334,7 +435,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CDD27F22DDA3D140075BEE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7CDD27FB2DDA3D140075BEE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CDD27F52DDA3D140075BEE9 /* BusinessLogicFramework */;
+			targetProxy = 7CDD27FA2DDA3D140075BEE9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7CDD274A2DD611830075BEE9 /* LaunchScreen.storyboard */ = {
@@ -521,6 +637,79 @@
 			};
 			name = Release;
 		};
+		7CDD28002DDA3D140075BEE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = YFP38JZYYX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanKoslov.BusinessLogicFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7CDD28012DDA3D140075BEE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = YFP38JZYYX;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruslanKoslov.BusinessLogicFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -538,6 +727,15 @@
 			buildConfigurations = (
 				7CDD27422DD611490075BEE9 /* Debug */,
 				7CDD27432DD611490075BEE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CDD27FF2DDA3D140075BEE9 /* Build configuration list for PBXNativeTarget "BusinessLogicFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CDD28002DDA3D140075BEE9 /* Debug */,
+				7CDD28012DDA3D140075BEE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -614,6 +812,21 @@
 			productName = RxSwift;
 		};
 		7CDD27AC2DDA32C60075BEE9 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CDD27AB2DDA32C60075BEE9 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		7CDD28072DDA3D360075BEE9 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CDD27A12DDA24840075BEE9 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		7CDD28092DDA3D400075BEE9 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CDD27A12DDA24840075BEE9 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		7CDD280B2DDA3D440075BEE9 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7CDD27AB2DDA32C60075BEE9 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
