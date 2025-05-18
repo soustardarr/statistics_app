@@ -2,7 +2,11 @@ import UIKit
 
 class VisitorsAndStatisticsCell: UICollectionViewCell {
 
-    var data: VisitorsAndStatistics?
+    var data: VisitorsAndStatistics? {
+        didSet {
+            updateProgress()
+        }
+    }
 
     var dateInterval: DateInterval.TypeView? {
         didSet {
@@ -170,7 +174,12 @@ class VisitorsAndStatisticsCell: UICollectionViewCell {
 
     private func updateCircle() {
         circleView?.removeFromSuperview()
-        circleView = CircleView(frame: CGRect(x: 0, y: 0, width: 142, height: 142), redPercentage: 0.6, orangePercentage: 0.4)
+        let manWomanPercentage: (man: CGFloat, woman: CGFloat) = VisitorsAndStatisticsDataMapper.getPercentageManWomanOnInterval(dateInterval: dateInterval!, visitorsAndStatistics: data!)
+
+        manLabel.text = "Мужчины \(Int(manWomanPercentage.man * 100))%"
+        womanLabel.text = "Женщины \(Int(manWomanPercentage.woman * 100))%"
+
+        circleView = CircleView(frame: CGRect(x: 0, y: 0, width: 142, height: 142), redPercentage: manWomanPercentage.man, orangePercentage: manWomanPercentage.woman)
         circleView?.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(circleView!)
 
@@ -212,13 +221,19 @@ class VisitorsAndStatisticsCell: UICollectionViewCell {
             ageStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             ageStackView.widthAnchor.constraint(equalToConstant: 50)
         ])
+    }
 
+    private func updateProgress() {
         let ageLabels = [age18To21, age22To25, age26To30, age31To35, age36To40, age40To50, ageAbove50]
-        for (index, label) in ageLabels.enumerated() {
+        for (_, label) in ageLabels.enumerated() {
             let twoLinesView = TwoLinesView(frame: .zero)
-            twoLinesView.data = TwoLinesView.Data(manPercentage: 0.21, womanPercentage: 0.60)
-            contentView.addSubview(twoLinesView)
 
+            twoLinesView.data = VisitorsAndStatisticsDataMapper.getPercentageManWomanOnIntervalWithAge(
+                dateInterval: dateInterval ?? .day,
+                visitorsAndStatistics: data,
+                ageRangeLabel: label.text!
+            )
+            contentView.addSubview(twoLinesView)
             NSLayoutConstraint.activate([
                 twoLinesView.widthAnchor.constraint(equalToConstant: 230),
                 twoLinesView.heightAnchor.constraint(equalToConstant: 27),

@@ -33,7 +33,7 @@ class ViewController: UIViewController {
                                                         17052024,
                                                         17052024,
                                                         17052024,
-                                                        18052024,
+                                                        18052025,
                                                         19052024,
                                                         20052024,
                                                         21052024,
@@ -51,26 +51,26 @@ class ViewController: UIViewController {
                                                         10092024,
                                                         10092024,
                                                         6092024,
+                                                      
                                                         11092024]),
             Statistics(user_id: 3, type: .view, dates: [ 4092024]),
             Statistics(user_id: 4, type: .view, dates: [
                                                         20092024,
-
                                                         10092024,
-
+                                                        18052025,
                                                         11092024]),
         ]
 
         let visitors: [Visitor] = [
             Visitor(
                 userName: "qpqpqppq",
-                id: 3,
+                id: 4,
                 sex: .M,
-                age: 12,
+                age: 18,
                 isOnline: false,
                 files: [
                     File(
-                        id: 3,
+                        id: 4,
                         url: "https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg",
                         type: .avatar
                     )
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
                 userName: "qpqpqppq",
                 id: 3,
                 sex: .M,
-                age: 12,
+                age: 22,
                 isOnline: false,
                 files: [
                     File(
@@ -94,7 +94,7 @@ class ViewController: UIViewController {
                 userName: "GGGGG",
                 id: 1,
                 sex: .M,
-                age: 12,
+                age: 55,
                 isOnline: true,
                 files: [
                     File(
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
                 userName: "GGdasdasd",
                 id: 2,
                 sex: .F,
-                age: 12,
+                age: 44,
                 isOnline: true,
                 files: [
                     File(

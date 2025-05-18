@@ -28,6 +28,7 @@
 		7CDD277A2DD8D22E0075BEE9 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27792DD8D22E0075BEE9 /* CircleView.swift */; };
 		7CDD277C2DD8E8770075BEE9 /* TwoLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD277B2DD8E8770075BEE9 /* TwoLinesView.swift */; };
 		7CDD277E2DD8E89C0075BEE9 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD277D2DD8E89C0075BEE9 /* LineView.swift */; };
+		7CDD27812DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD27802DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		7CDD27792DD8D22E0075BEE9 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		7CDD277B2DD8E8770075BEE9 /* TwoLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLinesView.swift; sourceTree = "<group>"; };
 		7CDD277D2DD8E89C0075BEE9 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		7CDD27802DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsAndStatisticsDataMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				7CDD274E2DD611830075BEE9 /* ViewController.swift */,
 				7CDD27622DD658380075BEE9 /* Collection */,
 				7CDD27692DD662EE0075BEE9 /* Extensions */,
+				7CDD277F2DD9FC8E0075BEE9 /* DataMappers */,
 			);
 			path = "MVC-Test-Proj-Rick-Masters";
 			sourceTree = "<group>";
@@ -139,6 +142,14 @@
 				7CDD277D2DD8E89C0075BEE9 /* LineView.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		7CDD277F2DD9FC8E0075BEE9 /* DataMappers */ = {
+			isa = PBXGroup;
+			children = (
+				7CDD27802DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift */,
+			);
+			path = DataMappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 				7CDD27542DD611830075BEE9 /* AppDelegate.swift in Sources */,
 				7CDD27552DD611830075BEE9 /* SceneDelegate.swift in Sources */,
 				7CDD277C2DD8E8770075BEE9 /* TwoLinesView.swift in Sources */,
+				7CDD27812DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift in Sources */,
 				7CDD275C2DD62C670075BEE9 /* HeaderCollectionViewCell.swift in Sources */,
 				7CDD27582DD613CB0075BEE9 /* CollectionView.swift in Sources */,
 				7CDD277E2DD8E89C0075BEE9 /* LineView.swift in Sources */,

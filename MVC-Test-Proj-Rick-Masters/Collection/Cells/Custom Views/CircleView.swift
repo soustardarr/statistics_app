@@ -12,8 +12,8 @@ class CircleView: UIView {
     private let orangePercentage: CGFloat
 
     init(frame: CGRect, redPercentage: CGFloat, orangePercentage: CGFloat) {
-        self.redPercentage = redPercentage
-        self.orangePercentage = orangePercentage
+        self.redPercentage = max(0, min(1, redPercentage))
+        self.orangePercentage = max(0, min(1 - self.redPercentage, orangePercentage))
         super.init(frame: frame)
         backgroundColor = .clear
     }
@@ -30,39 +30,33 @@ class CircleView: UIView {
         let closureGapAngle: CGFloat = 0.06 * .pi
 
         let startAngleOffset = closureGapAngle / 2
+        let startAngle = -.pi / 2 + startAngleOffset
+        let maxEndAngle = startAngle + 2 * .pi - closureGapAngle
 
-        let startAngleRed = -.pi / 2 + startAngleOffset
-        var endAngleRed = startAngleRed + (2 * .pi * redPercentage)
-
-        if endAngleRed > (3 * .pi / 2 - startAngleOffset) {
-            endAngleRed = 3 * .pi / 2 - startAngleOffset
-        }
-
-        let startAngleOrange = endAngleRed + totalGapAngle
-        var endAngleOrange = startAngleOrange + (2 * .pi * orangePercentage)
-
-        if endAngleOrange > (3 * .pi / 2 - startAngleOffset) {
-            endAngleOrange = 3 * .pi / 2 - startAngleOffset
-        }
-
+        let endAngleRed = startAngle + (2 * .pi * redPercentage)
         let redPath = UIBezierPath(arcCenter: center,
                                    radius: radius,
-                                   startAngle: startAngleRed,
-                                   endAngle: endAngleRed,
+                                   startAngle: startAngle,
+                                   endAngle: min(endAngleRed, maxEndAngle),
                                    clockwise: true)
         UIColor.red.setStroke()
         redPath.lineWidth = lineWidth
         redPath.lineCapStyle = .round
         redPath.stroke()
 
-        let orangePath = UIBezierPath(arcCenter: center,
-                                      radius: radius,
-                                      startAngle: startAngleOrange,
-                                      endAngle: endAngleOrange,
-                                      clockwise: true)
-        UIColor.orange.setStroke()
-        orangePath.lineWidth = lineWidth
-        orangePath.lineCapStyle = .round
-        orangePath.stroke()
+        let orangeStart = min(endAngleRed + totalGapAngle, maxEndAngle)
+        let orangeEnd = min(orangeStart + (2 * .pi * orangePercentage), maxEndAngle)
+
+        if orangeEnd > orangeStart {
+            let orangePath = UIBezierPath(arcCenter: center,
+                                          radius: radius,
+                                          startAngle: orangeStart,
+                                          endAngle: orangeEnd,
+                                          clockwise: true)
+            UIColor.orange.setStroke()
+            orangePath.lineWidth = lineWidth
+            orangePath.lineCapStyle = .round
+            orangePath.stroke()
+        }
     }
 }

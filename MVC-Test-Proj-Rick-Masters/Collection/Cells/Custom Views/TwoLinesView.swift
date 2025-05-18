@@ -68,8 +68,10 @@ class TwoLinesView: UIView {
 
         addSubview(manLineView!)
         addSubview(womanLineView!)
-        let manMultiplier = data.manPercentage == 0 ? 0.02 : data.manPercentage
-        let womanMultiplier = data.womanPercentage == 0 ? 0.02 : data.womanPercentage
+        var manMultiplier = data.manPercentage == 0 ? 0.02 : data.manPercentage
+        var womanMultiplier = data.womanPercentage == 0 ? 0.02 : data.womanPercentage
+        manMultiplier = data.manPercentage == 1 ? 0.8 : manMultiplier
+        womanMultiplier = data.womanPercentage == 1 ? 0.8 : womanMultiplier
 
         NSLayoutConstraint.activate([
             manLineView!.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -7),
@@ -88,6 +90,5 @@ class TwoLinesView: UIView {
             womanLabel.leadingAnchor.constraint(equalTo: womanLineView!.trailingAnchor, constant: 10),
             womanLabel.centerYAnchor.constraint(equalTo: womanLineView!.centerYAnchor)
         ])
-        layoutIfNeeded()
     }
 }
