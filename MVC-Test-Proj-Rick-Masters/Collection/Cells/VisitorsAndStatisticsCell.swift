@@ -222,8 +222,8 @@ class VisitorsAndStatisticsCell: UICollectionViewCell {
             NSLayoutConstraint.activate([
                 twoLinesView.widthAnchor.constraint(equalToConstant: 230),
                 twoLinesView.heightAnchor.constraint(equalToConstant: 27),
-                twoLinesView.leadingAnchor.constraint(equalTo: ageStackView.trailingAnchor, constant: 30),
-                twoLinesView.topAnchor.constraint(equalTo: lineView.topAnchor, constant: CGFloat(index * 20))
+                twoLinesView.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 30),
+                twoLinesView.topAnchor.constraint(equalTo: label.topAnchor, constant: -7)
             ])
         }
 

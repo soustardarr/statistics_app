@@ -68,22 +68,24 @@ class TwoLinesView: UIView {
 
         addSubview(manLineView!)
         addSubview(womanLineView!)
+        let manMultiplier = data.manPercentage == 0 ? 0.02 : data.manPercentage
+        let womanMultiplier = data.womanPercentage == 0 ? 0.02 : data.womanPercentage
 
         NSLayoutConstraint.activate([
-            manLineView!.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -13.5),
+            manLineView!.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -7),
             manLineView!.leadingAnchor.constraint(equalTo: leadingAnchor),
-            manLineView!.heightAnchor.constraint(equalToConstant: 8),
-            manLineView!.widthAnchor.constraint(equalTo: widthAnchor, multiplier: data.manPercentage), // Динамическая ширина
-            
-            womanLineView!.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 13.5),
-            womanLineView!.leadingAnchor.constraint(equalTo: leadingAnchor),
-            womanLineView!.heightAnchor.constraint(equalToConstant: 8),
-            womanLineView!.widthAnchor.constraint(equalTo: widthAnchor, multiplier: data.womanPercentage), // Динамическая ширина
+            manLineView!.heightAnchor.constraint(equalToConstant: 5),
+            manLineView!.widthAnchor.constraint(equalTo: widthAnchor, multiplier: manMultiplier),
 
-            manLabel.leadingAnchor.constraint(equalTo: manLineView!.trailingAnchor, constant: 30),
+            womanLineView!.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 7),
+            womanLineView!.leadingAnchor.constraint(equalTo: leadingAnchor),
+            womanLineView!.heightAnchor.constraint(equalToConstant: 5),
+            womanLineView!.widthAnchor.constraint(equalTo: widthAnchor, multiplier: womanMultiplier),
+
+            manLabel.leadingAnchor.constraint(equalTo: manLineView!.trailingAnchor, constant: 10),
             manLabel.centerYAnchor.constraint(equalTo: manLineView!.centerYAnchor),
 
-            womanLabel.leadingAnchor.constraint(equalTo: womanLineView!.trailingAnchor, constant: 30),
+            womanLabel.leadingAnchor.constraint(equalTo: womanLineView!.trailingAnchor, constant: 10),
             womanLabel.centerYAnchor.constraint(equalTo: womanLineView!.centerYAnchor)
         ])
         layoutIfNeeded()
