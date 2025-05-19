@@ -12,8 +12,9 @@ class ViewControllerAssembly {
     static func assemble() -> ViewController {
         let network = NetworkService()
         let storage = StorageService()
-        let model = Model(storage: storage, network: network)
+        let model = Model(network: network, storage: storage)
         let viewController = ViewController()
+        viewController.model = model
         return viewController
     }
 }

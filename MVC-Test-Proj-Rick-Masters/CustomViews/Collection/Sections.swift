@@ -21,12 +21,22 @@ struct FrequentVisitors: Decodable  {
     let visitors: [Visitor]
 }
 
-struct VisitorsAndStatistics: Decodable {
-    let visitors: [Visitor]
-    let statistics: [Statistics]
+public struct VisitorsAndStatistics: Codable {
+    public let visitors: [Visitor]
+    public let statistics: [Statistics]
+    
+    public init(visitors: [Visitor], statistics: [Statistics]) {
+        self.visitors = visitors
+        self.statistics = statistics
+    }
+    
+    public enum CodingKeys: String, CodingKey {
+        case visitors = "users"
+        case statistics
+    }
 }
 
-struct Visitor: Decodable  {
+public struct Visitor: Codable  {
     let userName: String
     let id: Int
     let sex: Sex
@@ -34,7 +44,7 @@ struct Visitor: Decodable  {
     let isOnline: Bool
     let files: [File]
 
-    enum Sex: String, Decodable {
+    enum Sex: String, Codable {
         case M = "M"
         case F = "F"
     }
@@ -49,54 +59,54 @@ struct Visitor: Decodable  {
     }
 }
 
-struct File: Decodable  {
+struct File: Codable  {
     let id: Int
     let url: String
     let type: TypeFile
 
-    enum TypeFile: String, Decodable {
+    enum TypeFile: String, Codable {
         case avatar = "avatar"
     }
 }
 
 
-struct UsersSubs: Decodable  {
+struct UsersSubs: Codable  {
     let usersSub: UsersView
     let usersUn: UsersView
 }
 
 
-struct UsersView: Decodable  {
+struct UsersView: Codable  {
     var count: Int
     var type: UsersViewType
 }
 
-enum UsersViewType: Decodable  {
+enum UsersViewType: Codable  {
     case subscription
     case unsubscription
     case view
 }
 
-struct DateInterval {
-    var isSelected: Bool
-    var typeView: TypeView
+//struct DateInterval {
+//    var isSelected: Bool
+//    var typeView: TypeView
+//
+//    enum TypeView: String {
+//        case onDay = "По дням"
+//        case onWeek = "По неделям"
+//        case onMonth = "По месяцам"
+//        case day = "Сегодня"
+//        case week = "Неделя"
+//        case month = "Месяц"
+//        case allTime = "Все время"
+//    }
+//}
 
-    enum TypeView: String {
-        case onDay = "По дням"
-        case onWeek = "По неделям"
-        case onMonth = "По месяцам"
-        case day = "Сегодня"
-        case week = "Неделя"
-        case month = "Месяц"
-        case allTime = "Все время"
-    }
-}
-
-struct ArrayStatistics: Decodable  {
+struct ArrayStatistics: Codable  {
     let statistics: [Statistics]
 }
 
-struct Statistics: Codable {
+public struct Statistics: Codable {
     let user_id: Int
     let type: StatisticsType
     let dates: [Int]

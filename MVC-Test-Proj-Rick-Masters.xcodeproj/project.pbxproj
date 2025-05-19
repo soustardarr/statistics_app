@@ -39,6 +39,9 @@
 		7CDD280A2DDA3D400075BEE9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD28092DDA3D400075BEE9 /* RxCocoa */; };
 		7CDD280C2DDA3D440075BEE9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD280B2DDA3D440075BEE9 /* RealmSwift */; };
 		7CDD280D2DDA3D440075BEE9 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7CDD280B2DDA3D440075BEE9 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7CDD281B2DDB2B1C0075BEE9 /* DateInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD281A2DDB2B1C0075BEE9 /* DateInterval.swift */; };
+		7CDD281C2DDB2B2C0075BEE9 /* DateInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD281A2DDB2B1C0075BEE9 /* DateInterval.swift */; };
+		7CDD281E2DDB30870075BEE9 /* Extensions+BusinessLogicFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD281D2DDB30870075BEE9 /* Extensions+BusinessLogicFramework.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,8 @@
 		7CDD27802DD9FCAB0075BEE9 /* VisitorsAndStatisticsDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsAndStatisticsDataMapper.swift; sourceTree = "<group>"; };
 		7CDD27862DDA05FF0075BEE9 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
 		7CDD27F62DDA3D140075BEE9 /* BusinessLogicFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BusinessLogicFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CDD281A2DDB2B1C0075BEE9 /* DateInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInterval.swift; sourceTree = "<group>"; };
+		7CDD281D2DDB30870075BEE9 /* Extensions+BusinessLogicFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+BusinessLogicFramework.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -174,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				7CDD27822DDA04490075BEE9 /* App */,
-				7CDD27842DDA04B00075BEE9 /* MVC */,
+				7CDD27842DDA04B00075BEE9 /* Screens */,
 				7CDD27852DDA04C70075BEE9 /* CustomViews */,
 				7CDD277F2DD9FC8E0075BEE9 /* DataMappers */,
 				7CDD27692DD662EE0075BEE9 /* Extensions */,
@@ -188,6 +193,7 @@
 			children = (
 				7CDD27632DD6584E0075BEE9 /* Cells */,
 				7CDD27572DD613CB0075BEE9 /* CollectionView.swift */,
+				7CDD281A2DDB2B1C0075BEE9 /* DateInterval.swift */,
 				7CDD27592DD61BBB0075BEE9 /* Sections.swift */,
 			);
 			path = Collection;
@@ -212,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				7CDD27672DD65D0F0075BEE9 /* Extensions+UICollectionViewCell.swift */,
+				7CDD281D2DDB30870075BEE9 /* Extensions+BusinessLogicFramework.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,13 +260,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		7CDD27842DDA04B00075BEE9 /* MVC */ = {
+		7CDD27842DDA04B00075BEE9 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				7CDD274E2DD611830075BEE9 /* ViewController.swift */,
 				7CDD27862DDA05FF0075BEE9 /* ViewControllerAssembly.swift */,
 			);
-			path = MVC;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		7CDD27852DDA04C70075BEE9 /* CustomViews */ = {
@@ -419,6 +426,7 @@
 				7CDD27872DDA05FF0075BEE9 /* ViewControllerAssembly.swift in Sources */,
 				7CDD275E2DD631D60075BEE9 /* ViewUsersCell.swift in Sources */,
 				7CDD27682DD65D0F0075BEE9 /* Extensions+UICollectionViewCell.swift in Sources */,
+				7CDD281E2DDB30870075BEE9 /* Extensions+BusinessLogicFramework.swift in Sources */,
 				7CDD275A2DD61BCC0075BEE9 /* Sections.swift in Sources */,
 				7CDD276B2DD67CFC0075BEE9 /* SubUsersCell.swift in Sources */,
 				7CDD27662DD6588D0075BEE9 /* IntervalCell.swift in Sources */,
@@ -432,6 +440,7 @@
 				7CDD27562DD611830075BEE9 /* ViewController.swift in Sources */,
 				7CDD277A2DD8D22E0075BEE9 /* CircleView.swift in Sources */,
 				7CDD27722DD777C90075BEE9 /* ChartVisitorsCell.swift in Sources */,
+				7CDD281B2DDB2B1C0075BEE9 /* DateInterval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CDD281C2DDB2B2C0075BEE9 /* DateInterval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,7 +650,7 @@
 		7CDD28002DDA3D140075BEE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -677,7 +687,7 @@
 		7CDD28012DDA3D140075BEE9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
